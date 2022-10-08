@@ -177,10 +177,11 @@ const createCommentNode = (commentObject) => {
         path.getAttribute("contenteditable") == null
       ) {
         path.setAttribute("contenteditable", true);
+        path.focus()
       } else {
         path.removeAttribute("contenteditable");
       }
-      console.log(path.getAttribute("contenteditable"));
+      
     });
     return commentNode;
   }
