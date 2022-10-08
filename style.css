@@ -16,194 +16,281 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
+  font-size: 16px;
 }
-body {
-  background-color: var(--Very-light-gray);
-  display: flex;
-  justify-content: center;
+p{
+    line-height: 1.5;
 }
-main {
-  width: 750px;
-  margin: 4rem 0;
+body{
+    height: 100%;
+    width: 100%;
+    padding-top: 3rem;
+    background-color: var(--Very-light-gray);
 }
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+a{
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
 }
-.comment {
-  background-color: var(--White);
-  border-radius: 10px;
+button{
+    cursor: pointer;
 }
-.comment_container {
-  padding: 1rem;
-  display: flex;
-  align-items: flex-start;
+button:hover{
+    filter: saturate(80%);
 }
-.upvotes_btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  background-color: var(--Light-gray);
-  height: 120px;
-  padding: 1rem;
-  border-radius: 12px;
+.bu-primary{
+    background-color: var(--Moderate-blue);
+    color: var(--White);
+    border: none;
+    padding: .75rem 1.5rem;
+    border-radius: 4px;
 }
-#plusVote,
-#minusVote {
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  cursor: pointer;
+.comment-section{
+    padding: 0 1rem;
+}
+.container{
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: var(--White);
+}
+.comments-wrp {
+    display: flex;
+    flex-direction: column;
+}
+.comment-section{
+    max-width: 75ch;
+    margin: auto;
+    margin-top: 1rem;
+}
+.comment{
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-areas: 
+        "score user controls"
+        "score comment comment"
+        "score comment comment"
+    ;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    row-gap: 1rem;
+    color: var(--Grayish-Blue);
 }
 
-#votes {
-  color: var(--Moderate-blue);
+.c-score{
+    color: var(--Moderate-blue);
+    font-weight: 500;
+    grid-area: score;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: .75rem;
+    padding-top: .5rem;
+    width: 1rem;
+    box-sizing: content-box;
+    background-color: var(--Very-light-gray);
+    border-radius: 8px;
+    align-self: flex-start;
 }
-.comment_info {
-  padding-inline: 1rem;
+.score-control{
+    width: 100%;
+    cursor: pointer;
+    object-fit: scale-down;
 }
-.comment_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.c-text{
+    grid-area: comment;
+    width: 100%;
 }
-.comment_header div:first-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
+.c-user{
+    width: 100%;
+    grid-area: user;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
-.avatar {
-  width: 40px;
+
+.usr-name{
+    color: var(--Dark-blue);
+    font-weight: 700;
 }
-.name {
-  font-weight: 500;
+.usr-img{
+    height: 2rem;
+    width: 2rem;
 }
-.date {
-  color: var(--Grayish-Blue);
-  font-weight: 400;
+
+.c-controls{
+    display: flex;
+    gap: 1rem;
+    color: var(--Moderate-blue);
+    grid-area: controls;
+    align-self: center;
+    justify-self: flex-end;
 }
-#replyBtn {
-  color: var(--Moderate-blue);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
+.c-controls a{
+    align-items: center;
 }
-.comment_txt {
-  margin-top: 0.5rem;
-  color: var(--Grayish-Blue);
+.edit , .reply{
+    color: var(--Moderate-blue);
 }
-.replies {
-  display: flex;
-  margin: 1rem 0;
+.edit{
+    display: none;
 }
-.replies::before {
-  width: 5px;
-  display: inline-block;
-  margin-inline: 2.6rem;
-  content: "";
-  background-color: var(--Light-gray);
-}
-.replies_container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.my::after{
-    content: 'you';
-    background-color: var(--Moderate-blue);
-    color: white;
-    font-size: 12px;
-    padding: .3rem;
-    margin-inline: .1rem;
-    border-radius: 5px;
-}
-#user {
-  font-weight: 500;
-  color: var(--Moderate-blue);
-}
-.comment_input {
-  background-color: var(--White);
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1rem;
-  border-radius: 10px;
-}
-#commentInput {
-  resize: none;
-  font-size: 1rem;
-  padding: 1rem;
-  width: 100%;
-  border-radius: 6px;
-  margin-inline: 1rem;
-  border: 1px solid var(--Light-gray);
-  height: 100px;
-}
-#sendBtn {
-  cursor: pointer;
-  color: var(--White);
-  background-color: var(--Moderate-blue);
-  border: none;
-  border-radius: 10px;
-  padding: 1rem 2rem;
-  text-transform: uppercase;
-}
-#delete{
-    gap: .2rem;
+.delete{
     color: var(--Soft-Red);
-    font-size: 13px;
-    margin-inline: .5rem;
+    display: none;
 }
-#edit{
+.control-icon{
+    margin-right: .5rem;
+}
+
+.replies{
+    display: flex;
+    margin-left: 2.5rem;
+    padding-left: 2.4rem;
+    border-left: 1px solid var(--Light-grayish-blue);
+}
+
+.reply-to{
+    color: var(--Moderate-blue);
+    font-weight: 500;
+}
+
+.reply-input{
+    display: grid;
+    margin-bottom: 1rem;
+    grid-template-areas: "avatar input button";
+    grid-template-columns: min-content auto min-content;
+    justify-items: center;
+    gap: 1rem;
+    min-height: 9rem;
+}
+.reply-input img{
+    grid-area: avatar;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.reply-input button{
+    grid-area: button;
+    align-self: flex-start;
+}
+.reply-input textarea{
+    grid-area: input;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid var(--Light-gray);
+    border-radius: 4px;
+    resize: none;
+}
+
+.this-user .usr-name::after{
+    font-weight: 400;
+    content: "you";
+    color: var(--White);
+    background-color: var(--Moderate-blue);
+    padding: 0 .4rem;
+    padding-bottom: .2rem;
+    font-size: .8rem;
+    margin-left: .5rem;
+    border-radius: 2px;
+}
+
+.this-user .reply{
+    display: none;
+}
+.this-user .edit , .this-user .delete{
+    display: flex;
+}
+
+@media screen and (max-width:640px) {
+    .container{
+        padding: .75rem;
+    }
+    .replies{
+        padding-left: 1rem;
+        margin-left: .5rem;
+    }
+    .comment{
+        grid-template-areas: 
+            "user user user"
+            "comment comment comment"
+            "score ... controls"
+        ;
+
+        gap: .5rem;
+    }
+    .c-score{
+        flex-direction: row;
+        width: auto;
+    }
+    .reply-input{
+        grid-template-areas: 
+            "input input input"
+            "avatar ... button"
+        ;
+        grid-template-rows: auto min-content;
+        align-items: center;
+        gap: .5rem;
+    }
+    .reply-input img{
+        height: 2rem;
+        width: 2rem;
+    }
+    .reply-input textarea{
+        height: 6rem;
+        padding: .5rem;
+        align-self: stretch;
+    }
+}
+
+
+.modal-wrp{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .2rem;
-    font-size: 13px;
+    background-color: rgba(0,0,0,.3);
 }
-@media screen and (max-width: 550px) {
-  main {
-    width: 350px;
-    margin: 2rem 0;
-  }
-  .comment_container {
-    flex-direction: column-reverse;
-    position: relative;
-  }
-  .comment_input{
+
+.modal{
+    padding: 1.5rem;
+    max-width: 32ch;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 1fr 1fr;
-    row-gap: 1rem;
-    height: 200px;
-  }
-  .upvotes_btn {
-    flex-direction: row;
-    height: 100%;
-    width: 120px;
-    margin: 1rem 0 0 0.5rem;
-  }
-  #replyBtn {
-    position: absolute;
-    right: 30px;
-    bottom: 30px;
-  }
-  .replies::before {
-    margin-inline: 0.9rem;
-  }
-  #commentInput{
-    margin-inline: 0;
-    grid-column: 3 span;
-    grid-row: 1;
-  }
-  #sendBtn{
-    grid-column: 3;
-  }
-  .comment_input img{
-    grid-column: 1;
-  }
+    gap: 1rem;
+    grid-template-areas: 
+    "heading heading"
+    "body body"
+    "no yes";
+}
+
+.invisible{
+    display: none;
+}
+
+.modal h3{
+    grid-area: heading;
+    color: var(--Dark-blue);
+}
+.modal button{
+    color: var(--White);
+    padding: .75rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+}
+.modal p{
+    grid-area: body;
+    color: var(--Grayish-Blue);
+    line-height: 1.5;
+}
+.modal .yes{
+    grid-area: yes;
+    background-color: var(--Soft-Red);
+}
+.modal .no{
+    background-color: var(--Grayish-Blue);
+    grid-area: no;
 }

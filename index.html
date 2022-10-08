@@ -14,176 +14,63 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <div class="container">
-        <div class="comment">
-          <div class="comment_container">
-            <div class="upvotes_btn">
-              <div id="plusVote">
-                <img src="./images/icon-plus.svg" alt="plus" />
-              </div>
-              <h3 id="votes">12</h3>
-              <div id="minusVote">
-                <img src="./images/icon-minus.svg" alt="minus" />
-              </div>
-            </div>
-            <div class="comment_info">
-              <div class="comment_header">
-                <div>
-                  <img
-                    class="avatar"
-                    src="./images/avatars/image-amyrobson.png"
-                    alt="amyrobson"
-                  />
-                  <p class="name">amyrobson</p>
-                  <p class="date">1 month ago</p>
-                </div>
-                <div id="replyBtn">
-                  <img src="./images/icon-reply.svg" alt="reply" />
-                  <h3>Reply</h3>
-                </div>
-              </div>
-              <div class="comment_txt">
-                <p>
-                  Impressive! Though it seems the drag feature could be
-                  improved. But overall it looks incredible. You've nailed the
-                  design and the responsiveness at various breakpoints works
-                  really well.
-                </p>
-              </div>
-            </div>
-          </div>
+    <template class="reply-input-template">
+    <div class="reply-input container">
+      <img src="images/avatars/image-juliusomo.webp" alt="" class="usr-img">
+      <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+      <button class="bu-primary">SEND</button>
+    </div>
+  </template>
+
+  <template class="comment-template">
+    <div class="comment-wrp">
+      <div class="comment container">
+        <div class="c-score">
+          <img src="images/icon-plus.svg" alt="plus" class="score-control score-plus">
+          <p class="score-number">5</p>
+          <img src="images/icon-minus.svg" alt="minus" class="score-control score-minus">
         </div>
-        <div class="cmt">
-          <div class="comment">
-            <div class="comment_container">
-              <div class="upvotes_btn">
-                <div id="plusVote">
-                  <img src="./images/icon-plus.svg" alt="plus" />
-                </div>
-                <h3 id="votes">5</h3>
-                <div id="minusVote">
-                  <img src="./images/icon-minus.svg" alt="minus" />
-                </div>
-              </div>
-              <div class="comment_info">
-                <div class="comment_header">
-                  <div>
-                    <img
-                      class="avatar"
-                      src="./images/avatars/image-maxblagun.png"
-                      alt="amyrobson"
-                    />
-                    <p class="name">maxblagun</p>
-                    <p class="date">2 weeks ago</p>
-                  </div>
-                  <div id="replyBtn">
-                    <img src="./images/icon-reply.svg" alt="reply" />
-                    <h3>Reply</h3>
-                  </div>
-                </div>
-                <div class="comment_txt">
-                  <p>
-                    Woah, your project looks awesome! How long have you been
-                    coding for? I'm still new, but think I want to dive into
-                    React as well soon. Perhaps you can give me an insight on
-                    where I can learn React? Thanks!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="replies">
-            <div class="replies_container">
-              <div class="comment">
-                <div class="comment_container">
-                  <div class="upvotes_btn">
-                    <div id="plusVote">
-                      <img src="./images/icon-plus.svg" alt="plus" />
-                    </div>
-                    <h3 id="votes">4</h3>
-                    <div id="minusVote">
-                      <img src="./images/icon-minus.svg" alt="minus" />
-                    </div>
-                  </div>
-                  <div class="comment_info">
-                    <div class="comment_header">
-                      <div>
-                        <img
-                          class="avatar"
-                          src="./images/avatars/image-ramsesmiron.png"
-                          alt="amyrobson"
-                        />
-                        <p class="name">ramsesmiron</p>
-                        <p class="date">1 weeks ago</p>
-                      </div>
-                      <div id="replyBtn">
-                        <img src="./images/icon-reply.svg" alt="reply" />
-                        <h3>Reply</h3>
-                      </div>
-                    </div>
-                    <div class="comment_txt">
-                      <p>
-                        <span id="user">@maxblagun</span> If you're still new, I'd recommend focusing on the
-                        fundamentals of HTML, CSS, and JS before considering
-                        React. It's very tempting to jump ahead but lay a solid
-                        foundation first.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="comment">
-                <div class="comment_container">
-                  <div class="upvotes_btn">
-                    <div id="plusVote">
-                      <img src="./images/icon-plus.svg" alt="plus" />
-                    </div>
-                    <h3 id="votes">2</h3>
-                    <div id="minusVote">
-                      <img src="./images/icon-minus.svg" alt="minus" />
-                    </div>
-                  </div>
-                  <div class="comment_info">
-                    <div class="comment_header">
-                      <div>
-                        <img
-                          class="avatar"
-                          src="./images/avatars/image-juliusomo.png"
-                          alt="amyrobson"
-                        />
-                        <p class="my name">juliusome</p>
-                        <p class="date">2 days ago</p>
-                      </div>
-                      <div id="replyBtn">
-                          <div id="delete">
-                            <img src="./images/icon-delete.svg" alt="delete">
-                            <h3>Delete</h3>
-                          </div>
-                          <div id="edit">
-                            <img src="./images//icon-edit.svg" alt="edit">
-                            <h3>Edit</h3>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="comment_txt">
-                      <p>
-                        <span id="user">@ramsesmiron</span> I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="c-controls">
+          <a  class="delete"><img src="images/icon-delete.svg" alt="" class="control-icon">Delete</a>
+          <a  class="edit"><img src="images/icon-edit.svg" alt="" class="control-icon">Edit</a>
+          <a  class="reply"><img src="images/icon-reply.svg" alt="" class="control-icon">Reply</a>
         </div>
-        <div class="comment_input">
-          <img src="./images/avatars/image-juliusomo.webp" alt="user" class="avatar">
-          <textarea name="comment" id="commentInput" placeholder="Add a comment..."></textarea>
-          <button id="sendBtn">send</button>
+        <div class="c-user">
+          <img src="images/avatars/image-maxblagun.webp" alt="" class="usr-img">
+          <p class="usr-name">maxblagun</p>
+          <p class="cmnt-at">2 weeks ago</p>    
         </div>
-      </div>
-    </main>
+        <p class="c-text">
+          <span class="reply-to"></span>
+          <span class="c-body"></span>
+        </p>
+      </div><!--comment-->
+      <div class="replies comments-wrp">
+      </div><!--replies-->
+    </div>
+  </template>
+<main>
+  <div class="comment-section">
+
+    <div class="comments-wrp">
+
+    </div> <!--commentS wrapper-->
+  <div class="reply-input container">
+      <img src="images/avatars/image-juliusomo.webp" alt="" class="usr-img">
+      <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+      <button class="bu-primary">SEND</button>
+    </div> <!--reply input-->
+  </div> <!--comment sectio-->
+  
+  <div class="modal-wrp invisible">
+    <div class="modal container">
+      <h3>Delete comment</h3>
+      <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
+      <button class="yes">YES,DELETE</button>
+      <button class="no">NO,CANCEL</button>
+    </div>
+  </div>
+</main>
     <script src="app.js"></script>
   </body>
 </html>
